@@ -4,6 +4,12 @@
 
 Indicator for **Quantower** that visually identifies **trap levels** on the chart, based on Volume Analysis.
 
+## Support the Project
+
+If this indicator helps your trading, consider supporting development:
+
+[Donate with ko-fi] https://ko-fi.com/wolfhacktrader
+
 ## How it works
 
 The indicator analyzes the **Price Levels** from Volume Analysis and calculates for each level:
