@@ -1,6 +1,6 @@
 # Big Trade Trap
 
-![Big Trade Trap](./bigtradetrap.png)
+![Big Trade Trap](./bigtradetrap2.png)
 
 Indicator for **Quantower** that visually identifies **trap levels** on the chart, based on Volume Analysis.
 
