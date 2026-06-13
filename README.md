@@ -53,5 +53,5 @@ Price moved down with high volume, but selling dominates excessively — potenti
 
 ## Installation
 
-1. Copy `BigTraders.dll` to `C:\Quantower\Settings\Scripts\Indicators`
+1. Copy `BigTraderTrap.dll` to `C:\Quantower\Settings\Scripts\Indicators`
 2. Add the indicator to the chart
