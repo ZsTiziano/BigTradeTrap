@@ -2,7 +2,7 @@
 
 Indicatore per **Quantowerm** che identifica visivamente i **trap level** sul grafico, basandosi sull'analisi del volume (Volume Analysis).
 
-![Big Trade Trap](bigtradertrap.png)
+![Big Trade Trap](./bigtradertrap.png)
 
 ## Come funziona
 
