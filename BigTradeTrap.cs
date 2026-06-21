@@ -19,6 +19,9 @@ public class BigTradeTrap : Indicator, IVolumeAnalysisIndicator
     [InputParameter("Top Trap Only", 7)]
     public bool TopTrapOnly = false;
 
+    [InputParameter("Show Level Lines", 8)]
+    public bool ShowLines = true;
+
     [InputParameter("Bull Color", 10)]
     public Color BullColor = Color.DarkCyan;
 
@@ -47,6 +50,7 @@ public class BigTradeTrap : Indicator, IVolumeAnalysisIndicator
     private double _prevTrapThreshold;
     private double _prevDeltaThreshold;
     private bool _prevTopTrapOnly;
+    private bool _prevShowLines;
     private int _lastScannedBarIndex;
     private bool _isReady;
     private DateTime _loadStart;
@@ -64,6 +68,7 @@ public class BigTradeTrap : Indicator, IVolumeAnalysisIndicator
         _prevTrapThreshold = TrapThreshold;
         _prevDeltaThreshold = DeltaThreshold;
         _prevTopTrapOnly = TopTrapOnly;
+        _prevShowLines = ShowLines;
     }
 
     public void VolumeAnalysisData_Loaded()
@@ -96,13 +101,15 @@ public class BigTradeTrap : Indicator, IVolumeAnalysisIndicator
 
         // Reset se cambiano i parametri
         if (MinTrapLevel != _prevMinTrapLevel || TrapThreshold != _prevTrapThreshold ||
-            DeltaThreshold != _prevDeltaThreshold || TopTrapOnly != _prevTopTrapOnly)
+            DeltaThreshold != _prevDeltaThreshold || TopTrapOnly != _prevTopTrapOnly ||
+            ShowLines != _prevShowLines)
         {
             ResetState();
             _prevMinTrapLevel = MinTrapLevel;
             _prevTrapThreshold = TrapThreshold;
             _prevDeltaThreshold = DeltaThreshold;
             _prevTopTrapOnly = TopTrapOnly;
+            _prevShowLines = ShowLines;
         }
 
         int currentIndex = HistoricalData.Count - 1;
@@ -398,7 +405,7 @@ public class BigTradeTrap : Indicator, IVolumeAnalysisIndicator
         using var font = new Font("Consolas", 8, FontStyle.Bold);
 
         // --- Linee orizzontali ---
-        foreach (var lb in bubbles)
+        if (ShowLines) foreach (var lb in bubbles)
         {
             if (lb.BarIndex < 0 || lb.BarIndex >= HistoricalData.Count)
                 continue;
